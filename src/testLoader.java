@@ -16,7 +16,7 @@ public class testLoader {
 		try{
 			String line;
 
-		    String cmd = "python ws.py 01219213 14 1";
+		    String cmd = "python ws.py 01204111 14 1";
 		    //System.out.println(cmd);
 		    Process p = Runtime.getRuntime().exec(cmd);
 		    BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));

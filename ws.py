@@ -17,6 +17,10 @@ if "Course code not found" in head:
 	print head.split(":")[0]
 else:
 	head = head.split("\xa0")
+	for x in range(0,len(head)):
+		head[x] = head[x].strip()
+	while 'Credit' in head:
+		head.remove('Credit')
 	while '' in head:
 		head.remove('')
 	print ("|").join(head)
@@ -33,7 +37,7 @@ else:
 			if (cts is None) or (len(cts) == 0) or cts == u'\xa0':
 				tline.append("NONE")
 				continue
-			tline.append(str((cts.replace(" ","").replace(u'\xa0',"")+" ")))
+			tline.append(str((cts.replace(" ","").replace(u'\xa0',"").encode('utf-8')+" ")).strip())
 		out.append(tline)
 	for x in out:
 		if len(x)==0:
